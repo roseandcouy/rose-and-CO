@@ -1,5 +1,5 @@
 const products = [
-  {id:1,name:"Soft Pinch Blush",brand:"Rare Beauty",category:"Maquillaje",price:1890,type:"bottle"},
+  {id:1,name:"Pocket Bronze Long",brand:"Rhode",category:"Maquillaje",price:2190,image:"s2981116-main-zoom.jpg.webp"},
   {id:2,name:"Body Mist",brand:"Sol de Janeiro",category:"Body Care",price:1650,type:"bottle"},
   {id:3,name:"Setting Spray",brand:"Charlotte Tilbury",category:"Maquillaje",price:2290,type:"bottle"},
   {id:4,name:"Eyeshadow Palette",brand:"Huda Beauty",category:"Maquillaje",price:3490,type:"flat"},
@@ -21,9 +21,15 @@ function renderProducts(){
     (currentFilter === "Todos" || p.category === currentFilter) &&
     `${p.name} ${p.brand} ${p.category}`.toLowerCase().includes(query)
   );
+
   grid.innerHTML = filtered.map(p => `
     <article class="product-card">
-      <div class="product-image"><div class="shape ${p.type}">${p.type === "flat" ? "BEAUTY" : p.brand.split(" ")[0].toUpperCase()}</div></div>
+      <div class="product-image">
+        ${p.image
+          ? `<img src="${p.image}" alt="${p.brand} ${p.name}">`
+          : `<div class="shape ${p.type}">${p.type === "flat" ? "BEAUTY" : p.brand.split(" ")[0].toUpperCase()}</div>`
+        }
+      </div>
       <div class="product-info">
         <div class="category-name">${p.category}</div>
         <h3>${p.brand} ${p.name}</h3>
