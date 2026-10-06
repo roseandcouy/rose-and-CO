@@ -3,127 +3,578 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rosé & Co. — Beauty importado de Estados Unidos por encargo.">
+
+  <meta
+    name="description"
+    content="Rosé & Co. — Beauty importado de Estados Unidos por encargo."
+  >
+
   <title>Rosé & Co. | Beauty from the USA</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="topbar">✧ Productos originales importados desde Estados Unidos ✧ &nbsp;|&nbsp; Demora aproximada: 1 mes ✈</div>
+
+  <div class="topbar">
+    ✧ Productos originales importados desde Estados Unidos ✧
+    &nbsp;|&nbsp;
+    Demora aproximada: 1 mes ✈
+  </div>
+
 
   <header class="header">
-    <button class="mobile-menu" aria-label="Abrir menú">☰</button>
+
+    <button class="mobile-menu" aria-label="Abrir menú">
+      ☰
+    </button>
+
     <a class="logo" href="#inicio">
       <span>ROSÉ & CO.</span>
       <small>BEAUTY IMPORTED FROM THE USA</small>
     </a>
+
     <nav id="mainNav">
       <a href="#inicio">Inicio</a>
       <a href="#tienda">Tienda</a>
       <a href="#como-comprar">Cómo comprar</a>
       <a href="#contacto">Contacto</a>
     </nav>
+
     <div class="header-actions">
-      <a href="https://instagram.com/roseandco.uy" target="_blank" aria-label="Instagram">◎</a>
-      <a href="https://wa.me/59898158619" target="_blank" aria-label="WhatsApp">◔</a>
-      <button class="cart-button" id="cartButton" aria-label="Abrir carrito">♧ <span id="cartCount">0</span></button>
+
+      <a
+        href="https://instagram.com/roseandco.uy"
+        target="_blank"
+        aria-label="Instagram"
+      >
+        ◎
+      </a>
+
+      <a
+        href="https://wa.me/59898158619"
+        target="_blank"
+        aria-label="WhatsApp"
+      >
+        ◔
+      </a>
+
+      <button
+        class="cart-button"
+        id="cartButton"
+        aria-label="Abrir carrito"
+      >
+        ♧
+        <span id="cartCount">0</span>
+      </button>
+
     </div>
+
   </header>
 
+
   <main>
+
+    <!-- HERO -->
+
     <section class="hero" id="inicio">
+
       <div class="hero-copy">
-        <p class="eyebrow">BEAUTY • SKINCARE • FRAGRANCE</p>
-        <h1>Tus marcas favoritas,<br><em>sin límites.</em></h1>
-        <p class="hero-text">Maquillaje, skincare, fragancias, cabello y más. Todo lo que amás de las tiendas de belleza de Estados Unidos, ahora por encargo en Uruguay.</p>
-        <a class="primary-btn" href="#tienda">VER TIENDA <span>→</span></a>
+
+        <p class="eyebrow">
+          BEAUTY • SKINCARE • FRAGRANCE
+        </p>
+
+        <h1>
+          Tus marcas favoritas,<br>
+          <em>sin límites.</em>
+        </h1>
+
+        <p class="hero-text">
+          Maquillaje, skincare, fragancias, cabello y más.
+          Todo lo que amás de las tiendas de belleza de Estados Unidos,
+          ahora por encargo en Uruguay.
+        </p>
+
+        <a class="primary-btn" href="#tienda">
+          VER TIENDA
+          <span>→</span>
+        </a>
+
       </div>
+
+
       <div class="hero-art" aria-hidden="true">
+
         <div class="glow"></div>
-        <div class="bottle bottle-one"><span>ROSÉ</span></div>
-        <div class="bottle bottle-two"><span>CO.</span></div>
-        <div class="jar">R<br><small>beauty</small></div>
-        <div class="flower">✿</div>
+
+        <div class="bottle bottle-one">
+          <span>ROSÉ</span>
+        </div>
+
+        <div class="bottle bottle-two">
+          <span>CO.</span>
+        </div>
+
+        <div class="jar">
+          R
+          <br>
+          <small>beauty</small>
+        </div>
+
+        <div class="flower">
+          ✿
+        </div>
+
       </div>
+
     </section>
+
+
+    <!-- CATEGORÍAS -->
 
     <section class="categories section">
-      <div class="section-title"><span></span><h2>CATEGORÍAS</h2><span></span></div>
-      <div class="category-grid">
-        <button class="category" data-category="Maquillaje"><i>♢</i><span>Maquillaje</span></button>
-        <button class="category" data-category="Skincare"><i>◌</i><span>Skincare</span></button>
-        <button class="category" data-category="Cabello"><i>♧</i><span>Cabello</span></button>
-        <button class="category" data-category="Perfumes"><i>♢</i><span>Perfumes</span></button>
-        <button class="category" data-category="Body Care"><i>◍</i><span>Body Care</span></button>
-        <button class="category" data-category="Todos"><i>•••</i><span>Más</span></button>
+
+      <div class="section-title">
+        <span></span>
+        <h2>CATEGORÍAS</h2>
+        <span></span>
       </div>
+
+
+      <div class="category-grid">
+
+        <button
+          class="category"
+          data-category="Maquillaje"
+        >
+          <i>♢</i>
+          <span>Maquillaje</span>
+        </button>
+
+
+        <button
+          class="category"
+          data-category="Skincare"
+        >
+          <i>◌</i>
+          <span>Skincare</span>
+        </button>
+
+
+        <button
+          class="category"
+          data-category="Cabello"
+        >
+          <i>♧</i>
+          <span>Cabello</span>
+        </button>
+
+
+        <button
+          class="category"
+          data-category="Perfumes"
+        >
+          <i>♢</i>
+          <span>Perfumes</span>
+        </button>
+
+
+        <button
+          class="category"
+          data-category="Body Care"
+        >
+          <i>◍</i>
+          <span>Body Care</span>
+        </button>
+
+
+        <button
+          class="category"
+          data-category="Todos"
+        >
+          <i>•••</i>
+          <span>Más</span>
+        </button>
+
+      </div>
+
     </section>
+
+
+    <!-- TIENDA -->
 
     <section class="shop section" id="tienda">
+
       <div class="section-heading">
+
         <div>
-          <p class="eyebrow">SHOP ROSÉ</p>
-          <h2>Productos destacados</h2>
+
+          <p class="eyebrow">
+            SHOP ROSÉ
+          </p>
+
+          <h2>
+            Productos destacados
+          </h2>
+
         </div>
+
+
         <div class="search-wrap">
-          <input id="search" type="search" placeholder="Buscar productos..." aria-label="Buscar productos">
+
+          <input
+            id="search"
+            type="search"
+            placeholder="Buscar productos..."
+            aria-label="Buscar productos"
+          >
+
           <span>⌕</span>
+
         </div>
+
       </div>
+
+
       <div class="filter-row">
-        <button class="filter active" data-filter="Todos">Todos</button>
-        <button class="filter" data-filter="Maquillaje">Maquillaje</button>
-        <button class="filter" data-filter="Skincare">Skincare</button>
-        <button class="filter" data-filter="Perfumes">Perfumes</button>
-        <button class="filter" data-filter="Body Care">Body Care</button>
+
+        <button
+          class="filter active"
+          data-filter="Todos"
+        >
+          Todos
+        </button>
+
+        <button
+          class="filter"
+          data-filter="Maquillaje"
+        >
+          Maquillaje
+        </button>
+
+        <button
+          class="filter"
+          data-filter="Skincare"
+        >
+          Skincare
+        </button>
+
+        <button
+          class="filter"
+          data-filter="Perfumes"
+        >
+          Perfumes
+        </button>
+
+        <button
+          class="filter"
+          data-filter="Body Care"
+        >
+          Body Care
+        </button>
+
       </div>
-      <div class="product-grid" id="productGrid"></div>
+
+
+      <div
+        class="product-grid"
+        id="productGrid"
+      >
+      </div>
+
     </section>
+
+
+    <!-- CÓMO COMPRAR -->
 
     <section class="how section" id="como-comprar">
-      <div class="section-title"><span></span><h2>¿CÓMO COMPRAR?</h2><span></span></div>
-      <p class="center-text">Es muy fácil. Seguí estos 4 pasos:</p>
-      <div class="steps">
-        <div class="step"><b>01</b><i>⌕</i><h3>Elegís</h3><p>Seleccionás tus productos favoritos en la tienda.</p></div>
-        <div class="step"><b>02</b><i>◔</i><h3>Pedís</h3><p>Armás tu carrito y nos enviás el pedido por WhatsApp.</p></div>
-        <div class="step"><b>03</b><i>✈</i><h3>Importamos</h3><p>Nos encargamos de comprar tus productos en EE. UU.</p></div>
-        <div class="step"><b>04</b><i>□</i><h3>Recibís</h3><p>Tu pedido llega a Uruguay en aproximadamente 1 mes.</p></div>
+
+      <div class="section-title">
+        <span></span>
+        <h2>¿CÓMO COMPRAR?</h2>
+        <span></span>
       </div>
-      <div class="notice">♡ Todos los productos son por encargo. El plazo estimado puede variar según disponibilidad y envío.</div>
+
+      <p class="center-text">
+        Es muy fácil. Seguí estos 4 pasos:
+      </p>
+
+
+      <div class="steps">
+
+        <div class="step">
+
+          <b>01</b>
+
+          <i>⌕</i>
+
+          <h3>
+            Elegís
+          </h3>
+
+          <p>
+            Seleccionás tus productos favoritos en la tienda.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <b>02</b>
+
+          <i>◔</i>
+
+          <h3>
+            Pedís
+          </h3>
+
+          <p>
+            Armás tu carrito y nos enviás el pedido por WhatsApp.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <b>03</b>
+
+          <i>✈</i>
+
+          <h3>
+            Importamos
+          </h3>
+
+          <p>
+            Nos encargamos de comprar tus productos en EE. UU.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <b>04</b>
+
+          <i>□</i>
+
+          <h3>
+            Recibís
+          </h3>
+
+          <p>
+            Tu pedido llega a Uruguay en aproximadamente 1 mes.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="notice">
+        ♡ Todos los productos son por encargo.
+        El plazo estimado puede variar según disponibilidad y envío.
+      </div>
+
     </section>
 
-    <section class="contact section" id="contacto">
+
+    <!-- CONTACTO -->
+
+    <section
+      class="contact section"
+      id="contacto"
+    >
+
       <div class="contact-card">
-        <p class="eyebrow">¿TENÉS ALGUNA CONSULTA?</p>
-        <h2>Estamos para ayudarte.</h2>
-        <p>¿No encontrás un producto? ¿Querés consultar por una marca? Escribinos.</p>
+
+        <p class="eyebrow">
+          ¿TENÉS ALGUNA CONSULTA?
+        </p>
+
+        <h2>
+          Estamos para ayudarte.
+        </h2>
+
+        <p>
+          ¿No encontrás un producto?
+          ¿Querés consultar por una marca?
+          Escribinos.
+        </p>
+
+
         <div class="contact-buttons">
-          <a class="primary-btn" href="https://wa.me/59898158619?text=Hola%20Ros%C3%A9%20%26%20Co.%2C%20quiero%20hacer%20una%20consulta." target="_blank">WHATSAPP · 098 158 619</a>
-          <a class="secondary-btn" href="https://instagram.com/roseandco.uy" target="_blank">INSTAGRAM · @roseandco.uy</a>
+
+          <a
+            class="primary-btn"
+            href="https://wa.me/59898158619?text=Hola%20Ros%C3%A9%20%26%20Co.%2C%20quiero%20hacer%20una%20consulta."
+            target="_blank"
+          >
+            WHATSAPP · 098 158 619
+          </a>
+
+
+          <a
+            class="secondary-btn"
+            href="https://instagram.com/roseandco.uy"
+            target="_blank"
+          >
+            INSTAGRAM · @roseandco.uy
+          </a>
+
         </div>
+
       </div>
+
     </section>
+
   </main>
 
+
+  <!-- FOOTER -->
+
   <footer>
-    <div class="footer-logo">ROSÉ & CO.<small>BEAUTY IMPORTED FROM THE USA</small></div>
-    <div class="footer-links"><a href="#inicio">Inicio</a><a href="#tienda">Tienda</a><a href="#como-comprar">Cómo comprar</a><a href="#contacto">Contacto</a></div>
-    <div class="footer-social"><a href="https://instagram.com/roseandco.uy" target="_blank">Instagram</a><a href="https://wa.me/59898158619" target="_blank">WhatsApp</a></div>
+
+    <div class="footer-logo">
+      ROSÉ & CO.
+
+      <small>
+        BEAUTY IMPORTED FROM THE USA
+      </small>
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="#inicio">
+        Inicio
+      </a>
+
+      <a href="#tienda">
+        Tienda
+      </a>
+
+      <a href="#como-comprar">
+        Cómo comprar
+      </a>
+
+      <a href="#contacto">
+        Contacto
+      </a>
+
+    </div>
+
+
+    <div class="footer-social">
+
+      <a
+        href="https://instagram.com/roseandco.uy"
+        target="_blank"
+      >
+        Instagram
+      </a>
+
+      <a
+        href="https://wa.me/59898158619"
+        target="_blank"
+      >
+        WhatsApp
+      </a>
+
+    </div>
+
   </footer>
 
-  <aside class="cart-panel" id="cartPanel" aria-label="Carrito">
-    <div class="cart-head"><h2>Tu carrito</h2><button id="closeCart">×</button></div>
-    <div class="cart-items" id="cartItems"><div class="empty-cart">Tu carrito está vacío ♡</div></div>
-    <div class="cart-footer">
-      <div class="total"><span>Total</span><strong id="cartTotal">$U 0</strong></div>
-      <p>Los productos son por encargo y demoran aproximadamente 1 mes.</p>
-      <button class="primary-btn full" id="checkout">REALIZAR PEDIDO POR WHATSAPP</button>
-    </div>
-  </aside>
-  <div class="overlay" id="overlay"></div>
 
+  <!-- CARRITO -->
+
+  <aside
+    class="cart-panel"
+    id="cartPanel"
+    aria-label="Carrito"
+  >
+
+    <div class="cart-head">
+
+      <h2>
+        Tu carrito
+      </h2>
+
+      <button id="closeCart">
+        ×
+      </button>
+
+    </div>
+
+
+    <div
+      class="cart-items"
+      id="cartItems"
+    >
+
+      <div class="empty-cart">
+        Tu carrito está vacío ♡
+      </div>
+
+    </div>
+
+
+    <div class="cart-footer">
+
+      <div class="total">
+
+        <span>
+          Total
+        </span>
+
+        <strong id="cartTotal">
+          $U 0
+        </strong>
+
+      </div>
+
+
+      <p>
+        Los productos son por encargo
+        y demoran aproximadamente 1 mes.
+      </p>
+
+
+      <button
+        class="primary-btn full"
+        id="checkout"
+      >
+        REALIZAR PEDIDO POR WHATSAPP
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <div
+    class="overlay"
+    id="overlay"
+  >
+  </div>
+
+
+  <!-- IMPORTANTE:
+       products.js tiene que cargarse ANTES que script.js
+  -->
+
+  <script src="products.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
