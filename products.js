@@ -5,7 +5,7 @@ const products = [
   brand:"Rhode",
   category:"Maquillaje",
   price:2190,
-  image:"s2981116-main-zoom.jpg.webp",
+  images:["s2981116-main-zoom.jpg.webp","rhode2.jpg"],
   description:"Bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."
 },
 
