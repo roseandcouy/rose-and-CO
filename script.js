@@ -1,5 +1,5 @@
 const products = [
-  {id:1,name:"Pocket Bronze Long",brand:"Rhode",category:"Maquillaje",price:2190,image:"s2981116-main-zoom.jpg",description:"bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."},
+  {id:1,name:"Pocket Bronze Long",brand:"Rhode",category:"Maquillaje",price:2190,image:"s2981116-main-zoom.jpg.webp",description:"bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."},
   {id:2,name:"Body Mist",brand:"Sol de Janeiro",category:"Body Care",price:1650,type:"bottle"},
   {id:3,name:"Setting Spray",brand:"Charlotte Tilbury",category:"Maquillaje",price:2290,type:"bottle"},
   {id:4,name:"Eyeshadow Palette",brand:"Huda Beauty",category:"Maquillaje",price:3490,type:"flat"},
@@ -34,7 +34,9 @@ function renderProducts(){
         <div class="category-name">${p.category}</div>
         <h3>${p.brand} ${p.name}</h3>
         <div class="price">${money(p.price)}</div>
-        <button class="add" onclick="addToCart(${p.id})">♧ &nbsp; AGREGAR AL CARRITO</button>
+        <button class="add" onclick="event.stopPropagation(); addToCart(${p.id})">
+  ♧ &nbsp; AGREGAR AL CARRITO
+</button>
       </div>
     </article>
   `).join("") || `<p style="grid-column:1/-1;text-align:center;padding:40px">No encontramos productos con esa búsqueda ♡</p>`;
