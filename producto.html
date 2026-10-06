@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto | Rosé & Co.</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="product-page">
+
+    <button onclick="history.back()" class="back-button">
+      ← Volver
+    </button>
+
+    <div id="productDetail"></div>
+
+  </main>
+
+  <script src="script.js"></script>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get("id"));
+
+    const product = products.find(p => p.id === id);
+
+    const container = document.getElementById("productDetail");
+
+    if(product){
+
+      container.innerHTML = `
+        <div class="product-detail">
+
+          <div class="product-detail-image">
+            ${
+              product.image
+                ? `<img src="./${product.image}" alt="${product.brand} ${product.name}">`
+                : ""
+            }
+          </div>
+
+          <div class="product-detail-info">
+
+            <div class="category-name">
+              ${product.category}
+            </div>
+
+            <h1>
+              ${product.brand} ${product.name}
+            </h1>
+
+            <div class="price">
+              ${money(product.price)}
+            </div>
+
+            <p class="product-full-description">
+              ${product.description || "Descripción próximamente."}
+            </p>
+
+            <button class="add" onclick="addToCart(${product.id})">
+              ♡ AGREGAR AL CARRITO
+            </button>
+
+          </div>
+
+        </div>
+      `;
+
+    } else {
+
+      container.innerHTML = `
+        <p>Producto no encontrado.</p>
+      `;
+
+    }
+  </script>
+
+</body>
+</html>
