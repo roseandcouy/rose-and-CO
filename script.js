@@ -1,5 +1,5 @@
 const products = [
-  {id:1,name:"Pocket Bronze Long",brand:"Rhode",category:"Maquillaje",price:2190,image:"s2981116-main-zoom.jpg.webp"},
+  {id:1,name:"Pocket Bronze Long",brand:"Rhode",category:"Maquillaje",price:2190,image:"s2981116-main-zoom.jpg",description:"bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."},
   {id:2,name:"Body Mist",brand:"Sol de Janeiro",category:"Body Care",price:1650,type:"bottle"},
   {id:3,name:"Setting Spray",brand:"Charlotte Tilbury",category:"Maquillaje",price:2290,type:"bottle"},
   {id:4,name:"Eyeshadow Palette",brand:"Huda Beauty",category:"Maquillaje",price:3490,type:"flat"},
