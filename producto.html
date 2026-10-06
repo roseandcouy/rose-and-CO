@@ -1,47 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Producto | Rosé & Co.</title>
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=Parisienne&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body>
 
+  <div class="topbar">
+    ✧ Productos originales importados desde Estados Unidos ✧
+    &nbsp;|&nbsp;
+    Demora aproximada: 1 mes ✈
+  </div>
+
+  <header class="header">
+
+    <a class="logo" href="index.html">
+      <span>ROSÉ & CO.</span>
+      <small>BEAUTY IMPORTED FROM THE USA</small>
+    </a>
+
+  </header>
+
+
   <main class="product-page">
 
-    <button onclick="history.back()" class="back-button">
-      ← Volver
+    <button
+      onclick="window.location.href='index.html#tienda'"
+      class="back-button"
+    >
+      ← Volver a la tienda
     </button>
 
     <div id="productDetail"></div>
 
   </main>
 
-  <script src="script.js"></script>
+
+  <script src="./products.js"></script>
 
   <script>
+
+    const money = n => "$U " + n.toLocaleString("es-UY");
+
     const params = new URLSearchParams(window.location.search);
+
     const id = Number(params.get("id"));
 
     const product = products.find(p => p.id === id);
 
     const container = document.getElementById("productDetail");
 
+
     if(product){
 
       container.innerHTML = `
+
         <div class="product-detail">
 
           <div class="product-detail-image">
+
             ${
               product.image
                 ? `<img src="./${product.image}" alt="${product.brand} ${product.name}">`
-                : ""
+                : `<div class="product-no-image">Rosé & Co.</div>`
             }
+
           </div>
+
 
           <div class="product-detail-info">
 
@@ -53,31 +92,69 @@
               ${product.brand} ${product.name}
             </h1>
 
-            <div class="price">
+            <div class="price product-detail-price">
               ${money(product.price)}
             </div>
 
             <p class="product-full-description">
-              ${product.description || "Descripción próximamente."}
+              ${product.description || "Próximamente agregaremos la descripción de este producto."}
             </p>
 
-            <button class="add" onclick="addToCart(${product.id})">
-              ♡ AGREGAR AL CARRITO
+            <button
+              class="add product-add"
+              onclick="addProductToCart(${product.id})"
+            >
+              ♡ &nbsp; AGREGAR AL CARRITO
             </button>
 
           </div>
 
         </div>
+
       `;
 
     } else {
 
       container.innerHTML = `
-        <p>Producto no encontrado.</p>
+        <p class="product-not-found">
+          Producto no encontrado.
+        </p>
       `;
 
     }
+
+
+    function addProductToCart(id){
+
+      let cart = JSON.parse(
+        localStorage.getItem("roseCart") || "[]"
+      );
+
+      const found = cart.find(i => i.id === id);
+
+      if(found){
+
+        found.qty++;
+
+      }else{
+
+        cart.push({
+          id:id,
+          qty:1
+        });
+
+      }
+
+      localStorage.setItem(
+        "roseCart",
+        JSON.stringify(cart)
+      );
+
+      alert("Producto agregado al carrito ♡");
+    }
+
   </script>
 
 </body>
+
 </html>
