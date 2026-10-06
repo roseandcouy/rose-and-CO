@@ -1,13 +1,13 @@
 const products = [
-  {
-    id:1,
-    name:"Pocket Bronze Long",
-    brand:"Rhode",
-    category:"Maquillaje",
-    price:2190,
-    image:"s2981116-main-zoom.jpg.webp",
-    description:"Bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."
-  },
+ {
+  id:1,
+  name:"Pocket Bronze Long",
+  brand:"Rhode",
+  category:"Maquillaje",
+  price:2190,
+  image:"s2981116-main-zoom.jpg.webp",
+  description:"Bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."
+},
 
   {
     id:2,
