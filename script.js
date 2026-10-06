@@ -17,7 +17,10 @@ function renderProducts(){
     <article class="product-card" onclick="openProduct(${p.id})">
       <div class="product-image">
         ${p.image
-          ? `<img src="./${p.image}" alt="${p.brand} ${p.name}">`
+         ${p.images && p.images.length
+  ? `<img src="./${p.images[0]}" alt="${p.brand} ${p.name}">`
+  : ...
+}
           : `<div class="shape ${p.type}">${p.type === "flat" ? "BEAUTY" : p.brand.split(" ")[0].toUpperCase()}</div>`
         }
       </div>
