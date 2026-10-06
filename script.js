@@ -23,7 +23,7 @@ function renderProducts(){
   );
 
   grid.innerHTML = filtered.map(p => `
-    <article class="product-card">
+    <article class="product-card" onclick="openProduct(${p.id})">
       <div class="product-image">
         ${p.image
           ? `<img src="./${p.image}" alt="${p.brand} ${p.name}">`
@@ -38,6 +38,10 @@ function renderProducts(){
       </div>
     </article>
   `).join("") || `<p style="grid-column:1/-1;text-align:center;padding:40px">No encontramos productos con esa búsqueda ♡</p>`;
+}
+
+function openProduct(id){
+  window.location.href = `producto.html?id=${id}`;
 }
 
 function addToCart(id){
