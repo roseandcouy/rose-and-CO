@@ -15,7 +15,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -27,14 +27,11 @@
   </div>
 
   <header class="header">
-
     <a class="logo" href="index.html">
       <span>ROSÉ & CO.</span>
       <small>BEAUTY IMPORTED FROM THE USA</small>
     </a>
-
   </header>
-
 
   <main class="product-page">
 
@@ -49,8 +46,7 @@
 
   </main>
 
-
-  <script src="./products.js"></script>
+  <script src="products.js"></script>
 
   <script>
 
@@ -67,16 +63,62 @@
 
     if(product){
 
+      const productImages =
+        product.images && product.images.length
+          ? product.images
+          : product.image
+            ? [product.image]
+            : [];
+
+
       container.innerHTML = `
 
         <div class="product-detail">
 
-          <div class="product-detail-image">
+          <div class="product-gallery">
 
             ${
-              product.image
-                ? `<img src="./${product.image}" alt="${product.brand} ${product.name}">`
-                : `<div class="product-no-image">Rosé & Co.</div>`
+              productImages.length
+                ? `
+                  <div class="main-product-image">
+                    <img
+                      id="mainProductImage"
+                      src="./${productImages[0]}"
+                      alt="${product.brand} ${product.name}"
+                    >
+                  </div>
+
+                  ${
+                    productImages.length > 1
+                      ? `
+                        <div class="product-thumbnails">
+
+                          ${productImages.map((img,index) => `
+
+                            <button
+                              class="${index === 0 ? "active" : ""}"
+                              onclick="changeProductImage('${img}', this)"
+                              aria-label="Ver foto ${index + 1}"
+                            >
+                              <img
+                                src="./${img}"
+                                alt="Foto ${index + 1} de ${product.brand} ${product.name}"
+                              >
+                            </button>
+
+                          `).join("")}
+
+                        </div>
+                      `
+                      : ""
+                  }
+
+                `
+                : `
+                  <div class="product-no-image">
+                    Rosé & Co.
+                  </div>
+                `
             }
 
           </div>
@@ -97,7 +139,10 @@
             </div>
 
             <p class="product-full-description">
-              ${product.description || "Próximamente agregaremos la descripción de este producto."}
+              ${
+                product.description ||
+                "Próximamente agregaremos la descripción de este producto."
+              }
             </p>
 
             <button
@@ -124,6 +169,23 @@
     }
 
 
+    function changeProductImage(image, button){
+
+      const mainImage =
+        document.getElementById("mainProductImage");
+
+      if(mainImage){
+        mainImage.src = "./" + image;
+      }
+
+      document
+        .querySelectorAll(".product-thumbnails button")
+        .forEach(btn => btn.classList.remove("active"));
+
+      button.classList.add("active");
+    }
+
+
     function addProductToCart(id){
 
       let cart = JSON.parse(
@@ -133,16 +195,12 @@
       const found = cart.find(i => i.id === id);
 
       if(found){
-
         found.qty++;
-
       }else{
-
         cart.push({
           id:id,
           qty:1
         });
-
       }
 
       localStorage.setItem(
