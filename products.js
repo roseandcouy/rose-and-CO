@@ -1,13 +1,21 @@
+console.log("PRODUCTS.JS CARGADO");
+
 const products = [
- {
-  id:1,
-  name:"Pocket Bronze Long",
-  brand:"Rhode",
-  category:"Maquillaje",
-  price:2190,
-  images:["s2981116-main-zoom.jpg.webp","rhode2.jpg"],
-  description:"Bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."
-},
+
+  {
+    id:1,
+    name:"Pocket Bronze Long",
+    brand:"Rhode",
+    category:"Maquillaje",
+    price:2190,
+
+    images:[
+      "s2981116-main-zoom.jpg.webp"
+    ],
+
+    description:"Bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."
+  },
+
 
   {
     id:2,
@@ -15,8 +23,11 @@ const products = [
     brand:"Sol de Janeiro",
     category:"Body Care",
     price:1650,
-    type:"bottle"
+    type:"bottle",
+
+    description:"Body mist perfumado de Sol de Janeiro."
   },
+
 
   {
     id:3,
@@ -24,8 +35,11 @@ const products = [
     brand:"Charlotte Tilbury",
     category:"Maquillaje",
     price:2290,
-    type:"bottle"
+    type:"bottle",
+
+    description:"Spray fijador de maquillaje de Charlotte Tilbury."
   },
+
 
   {
     id:4,
@@ -33,8 +47,11 @@ const products = [
     brand:"Huda Beauty",
     category:"Maquillaje",
     price:3490,
-    type:"flat"
+    type:"flat",
+
+    description:"Paleta de sombras de Huda Beauty."
   },
+
 
   {
     id:5,
@@ -42,8 +59,11 @@ const products = [
     brand:"Summer Fridays",
     category:"Skincare",
     price:1790,
-    type:"bottle"
+    type:"bottle",
+
+    description:"Bálsamo labial hidratante de Summer Fridays."
   },
+
 
   {
     id:6,
@@ -51,8 +71,11 @@ const products = [
     brand:"Laneige",
     category:"Skincare",
     price:1490,
-    type:"round"
+    type:"round",
+
+    description:"Mascarilla hidratante para labios de Laneige."
   },
+
 
   {
     id:7,
@@ -60,8 +83,11 @@ const products = [
     brand:"Marc Jacobs",
     category:"Perfumes",
     price:3290,
-    type:"bottle"
+    type:"bottle",
+
+    description:"Eau de Parfum de Marc Jacobs."
   },
+
 
   {
     id:8,
@@ -69,6 +95,11 @@ const products = [
     brand:"Tatcha",
     category:"Skincare",
     price:3890,
-    type:"round"
+    type:"round",
+
+    description:"Crema hidratante de Tatcha."
   }
+
 ];
+
+console.log("PRODUCTOS CARGADOS:", products);
