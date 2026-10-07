@@ -36,8 +36,8 @@
   <main class="product-page">
 
     <button
-      onclick="window.location.href='index.html#tienda'"
       class="back-button"
+      onclick="window.location.href='index.html#tienda'"
     >
       ← Volver a la tienda
     </button>
@@ -46,30 +46,107 @@
 
   </main>
 
-  <script src="products.js"></script>
-
   <script>
+
+    const products = [
+      {
+        id:1,
+        name:"Pocket Bronze Long",
+        brand:"Rhode",
+        category:"Maquillaje",
+        price:2190,
+        images:[
+          "s2981116-main-zoom.jpg.webp"
+        ],
+        description:"Bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave."
+      },
+
+      {
+        id:2,
+        name:"Body Mist",
+        brand:"Sol de Janeiro",
+        category:"Body Care",
+        price:1650,
+        type:"bottle",
+        description:"Body mist perfumado de Sol de Janeiro."
+      },
+
+      {
+        id:3,
+        name:"Setting Spray",
+        brand:"Charlotte Tilbury",
+        category:"Maquillaje",
+        price:2290,
+        type:"bottle",
+        description:"Spray fijador de maquillaje de Charlotte Tilbury."
+      },
+
+      {
+        id:4,
+        name:"Eyeshadow Palette",
+        brand:"Huda Beauty",
+        category:"Maquillaje",
+        price:3490,
+        type:"flat",
+        description:"Paleta de sombras de Huda Beauty."
+      },
+
+      {
+        id:5,
+        name:"Lip Butter Balm",
+        brand:"Summer Fridays",
+        category:"Skincare",
+        price:1790,
+        type:"bottle",
+        description:"Bálsamo labial hidratante de Summer Fridays."
+      },
+
+      {
+        id:6,
+        name:"Lip Sleeping Mask",
+        brand:"Laneige",
+        category:"Skincare",
+        price:1490,
+        type:"round",
+        description:"Mascarilla hidratante para labios de Laneige."
+      },
+
+      {
+        id:7,
+        name:"Eau de Parfum",
+        brand:"Marc Jacobs",
+        category:"Perfumes",
+        price:3290,
+        type:"bottle",
+        description:"Eau de Parfum de Marc Jacobs."
+      },
+
+      {
+        id:8,
+        name:"Hydrating Cream",
+        brand:"Tatcha",
+        category:"Skincare",
+        price:3890,
+        type:"round",
+        description:"Crema hidratante de Tatcha."
+      }
+    ];
 
     const money = n => "$U " + n.toLocaleString("es-UY");
 
     const params = new URLSearchParams(window.location.search);
-
     const id = Number(params.get("id"));
 
     const product = products.find(p => p.id === id);
 
     const container = document.getElementById("productDetail");
 
-
     if(product){
 
-      const productImages =
+      const images =
         product.images && product.images.length
           ? product.images
-          : product.image
-            ? [product.image]
-            : [];
-
+          : [];
 
       container.innerHTML = `
 
@@ -78,41 +155,41 @@
           <div class="product-gallery">
 
             ${
-              productImages.length
+              images.length
                 ? `
                   <div class="main-product-image">
+                    <button class="gallery-arrow left" onclick="previousImage()">‹</button>
+
                     <img
                       id="mainProductImage"
-                      src="./${productImages[0]}"
+                      src="${images[0]}"
                       alt="${product.brand} ${product.name}"
                     >
+
+                    <button class="gallery-arrow right" onclick="nextImage()">›</button>
                   </div>
 
                   ${
-                    productImages.length > 1
+                    images.length > 1
                       ? `
                         <div class="product-thumbnails">
 
-                          ${productImages.map((img,index) => `
-
+                          ${images.map((img,index) => `
                             <button
                               class="${index === 0 ? "active" : ""}"
-                              onclick="changeProductImage('${img}', this)"
-                              aria-label="Ver foto ${index + 1}"
+                              onclick="selectImage(${index})"
                             >
                               <img
-                                src="./${img}"
-                                alt="Foto ${index + 1} de ${product.brand} ${product.name}"
+                                src="${img}"
+                                alt="Foto ${index + 1}"
                               >
                             </button>
-
                           `).join("")}
 
                         </div>
                       `
                       : ""
                   }
-
                 `
                 : `
                   <div class="product-no-image">
@@ -139,24 +216,23 @@
             </div>
 
             <p class="product-full-description">
-              ${
-                product.description ||
-                "Próximamente agregaremos la descripción de este producto."
-              }
+              ${product.description}
             </p>
 
             <button
               class="add product-add"
               onclick="addProductToCart(${product.id})"
             >
-              ♡ &nbsp; AGREGAR AL CARRITO
+              ♡ AGREGAR AL CARRITO
             </button>
 
           </div>
 
         </div>
-
       `;
+
+      window.productImages = images;
+      window.currentImageIndex = 0;
 
     } else {
 
@@ -169,20 +245,58 @@
     }
 
 
-    function changeProductImage(image, button){
+    function updateMainImage(){
 
-      const mainImage =
-        document.getElementById("mainProductImage");
+      const image = document.getElementById("mainProductImage");
 
-      if(mainImage){
-        mainImage.src = "./" + image;
-      }
+      if(!image) return;
+
+      image.src = window.productImages[window.currentImageIndex];
 
       document
         .querySelectorAll(".product-thumbnails button")
-        .forEach(btn => btn.classList.remove("active"));
+        .forEach((btn,index) => {
+          btn.classList.toggle(
+            "active",
+            index === window.currentImageIndex
+          );
+        });
+    }
 
-      button.classList.add("active");
+
+    function selectImage(index){
+
+      window.currentImageIndex = index;
+
+      updateMainImage();
+    }
+
+
+    function nextImage(){
+
+      if(!window.productImages.length) return;
+
+      window.currentImageIndex =
+        (window.currentImageIndex + 1)
+        % window.productImages.length;
+
+      updateMainImage();
+    }
+
+
+    function previousImage(){
+
+      if(!window.productImages.length) return;
+
+      window.currentImageIndex =
+        (
+          window.currentImageIndex
+          - 1
+          + window.productImages.length
+        )
+        % window.productImages.length;
+
+      updateMainImage();
     }
 
 
@@ -195,12 +309,16 @@
       const found = cart.find(i => i.id === id);
 
       if(found){
+
         found.qty++;
+
       }else{
+
         cart.push({
           id:id,
           qty:1
         });
+
       }
 
       localStorage.setItem(
