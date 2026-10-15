@@ -13,9 +13,7 @@ const products = [
       "s2981116-main-zoom.jpg.webp"
     ],
 
-    description:"Bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave.
-          Consulta por el tono que quieras.
-      Pedidos por encargue, llegan a Uruguay el 25/01/2027"
+    description:"Bronceador en crema de larga duración que proporciona un color hidratante y edificable y se mezcla sin problemas, añadiendo calidez bañada por el sol y una dimensión suave. Consulta por el tono que quieras. Pedidos por encargue, llegan a Uruguay el 25/01/2027"
   },
 
 
