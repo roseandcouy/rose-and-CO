@@ -19,15 +19,13 @@ const products = [
 
   {
     id:2,
-    name:"Body Mist",
-    brand:"Sol de Janeiro",
-    category:"Body Care",
-    price:1650,
-    type:"bottle",
-
-    description:"Body mist perfumado de Sol de Janeiro."
+    name:"Pocket Blush",
+    brand:"Rhode",
+    category:"Maquillaje",
+    price:1899,
+    images:["s2998102-av-3202605131739359500700-zoom.jpg.webp","s2998102-main-zoom.jpg.webp"]
+    description:"Un colorete en crema ideal para llevar a todas partes, que aporta a las mejillas y a los labios un toque de color difuminado con acabado satinado. Consulta por el tono que quieras. Pedidos por encargue, llegan a Uruguay el 25/01/2027"
   },
-
 
   {
     id:3,
